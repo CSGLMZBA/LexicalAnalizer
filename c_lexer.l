@@ -62,7 +62,7 @@ WS          [ \t\r]+
 "+"|"-"|"*"|"/"|"="|"%"  { print_tok("OPERATOR", yytext); }
 "<"|">"|"!"|"~"|"^"|"|"  { print_tok("OPERATOR", yytext); }
 
-"(" | ")" | "{" | "}" | "[" | "]" | ";" | "," | ":" | "." { print_tok("PUNCT", yytext); }
+"("|")"|"{"|"}"|"["|"]"|";"|","|":"|"." { print_tok("PUNCT", yytext); }
 
 {ID}                     {
                             if (is_keyword(yytext)) print_tok("KEYWORD", yytext);
